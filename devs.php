@@ -5,11 +5,16 @@ $connection = new mysqli('localhost','root','','ddd');
 // $sql="SELECT name,age,cell,localtion,gender,skill,from developers";
 //or
  $sql="SELECT * from developers  ORDER BY id DESC ";
+//  $sql="SELECT * from developers WHERE location = 'gulshan' ";
+//  $sql="SELECT * from developers WHERE location = 'uttara' AND gender ='male' ";
+//  $sql="SELECT * from developers WHERE location = 'uttara' OR gender ='male' ";
+ $sql="SELECT * from developers WHERE NOT location = 'uttara' OR gender ='male' ";
+
 
 $data = $connection-> query($sql);
 
 // echo "<pre>";
-// print_r($data->fetch_object());
+// print_r($data->fetch_object()); 
 // print_r($data->fetch_all());
 // echo "</pre>";
 
